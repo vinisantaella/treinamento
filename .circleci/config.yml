@@ -57,6 +57,7 @@ jobs:
         command: |
           if [ -n "${AZURE_USERNAME}" ]; then
             echo "User credentials detected; logging in with user"
+            whoami
             sudo su -c 'az login -u '"$AZURE_USERNAME"' -p ' "$AZURE_PASSWORD"
           else
             echo "Login failed; neither user nor Service Principal credentials were provided"
